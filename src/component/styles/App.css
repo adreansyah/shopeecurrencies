@@ -1,0 +1,80 @@
+.align-currencies {
+  text-align: center;
+  padding: 10px;
+  padding-top:20px; 
+}
+
+.italic {
+  font-style: italic;
+}
+
+.el-currencies {
+  margin-top: 12px;
+  border: 1px solid #ebebeb;
+}
+
+.el-flex {
+  display: flex;
+}
+
+.el-size-left{
+  width: 100%;
+  text-align: left;
+  padding: 6px;
+}
+
+.el-fair-size-left{
+  width:85%;
+  text-align: left
+}
+
+.is-list{
+  position: initial;
+  display: inline-flex;
+  /* padding-top: 24px; */
+}
+.el-size-right {
+  border-left: 1px solid #ebebeb;
+  background: #f24a58;
+  color: white;
+  width:14%
+}
+
+.header-curr {
+  border-bottom: 1px solid #ebebeb;
+  margin: 4px 0px 12px 0px;
+}
+
+.float-l {
+  float: left;
+  display: grid;
+}
+
+.is-flex{
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0px 0px 0px;
+  margin-bottom: 6px;
+}
+
+.txt-left{
+  text-align: left
+}
+
+.txt-right{
+  text-align: right
+}
+
+.txt-center{
+  text-align: center
+}
+
+.el-number-dictionary {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.el-not-found{
+  margin:30px
+}
