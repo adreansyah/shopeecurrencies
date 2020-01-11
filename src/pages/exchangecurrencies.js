@@ -76,6 +76,22 @@ const SiteExchange = (props: Props) => {
               ChangeCurrency={e => ChangeCurrency(e)}
               changeAmount={changeAmount}
             />
+            {flowCurrencies.data.length !== 0 ? (
+              flowCurrencies.data.map((value, index) => {
+                return (
+                  <ListCurrencies
+                    key={index}
+                    data={value}
+                    DeleteCurrencies={() => DeleteCurrencies(value.keys)}
+                    changeAmount={changeAmount}
+                  />
+                );
+              })
+            ) : (
+              <div className="txt-center el-not-found">
+                Exchange Currencies Not found
+              </div>
+            )}
             {activeInput !== 0 ? (
               <>
                 <form onSubmit={SubmitCurrencies}>
@@ -110,7 +126,11 @@ const SiteExchange = (props: Props) => {
                     size="medium"
                     variant="contained"
                     color="secondary"
-                    style={{ margin: 2 }}
+                    style={{
+                      margin: 2 ,
+                      backgroundColor: "#f35c31",
+                      color:"#FFF"
+                    }}
                   >
                     Submit
                   </Button>
@@ -122,26 +142,14 @@ const SiteExchange = (props: Props) => {
                 onClick={FormInputActiveCurrencies}
                 fullWidth
                 variant="contained"
-                color="secondary"
+                style={{
+                  borderRadius: 35,
+                  backgroundColor: "#f35c31",
+                  color:"#FFF"
+                }}
               >
                 <FontAwesomeIcon icon={faPlus} fixedWidth /> Add More Currencies
               </Button>
-            )}
-            {flowCurrencies.data.length !== 0 ? (
-              flowCurrencies.data.map((value, index) => {
-                return (
-                  <ListCurrencies
-                    key={index}
-                    data={value}
-                    DeleteCurrencies={() => DeleteCurrencies(value.keys)}
-                    changeAmount={changeAmount}
-                  />
-                );
-              })
-            ) : (
-              <div className="txt-center el-not-found">
-                Exchange Currencies Not found
-              </div>
             )}
           </CardContent>
         </Card>
