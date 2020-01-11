@@ -19,8 +19,6 @@ import { bindActionCreators } from "redux";
 import Header from "component/header";
 import ListCurrencies from "component/listCurenncies";
 
-
-
 type Props = {
   flowCurrencies: {
     data: Array<*>,
