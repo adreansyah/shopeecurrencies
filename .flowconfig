@@ -1,8 +1,16 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
 [options]
+all=true
 suppress_comment=\\(.\\|\n\\)*\\#FlowExpectError
 suppress_comment=\\(.\\|\n\\)*\\#FlowIgnoreAsset
 esproposal.class_instance_fields=enable
 esproposal.class_static_fields=enable
 
-[ignore]
-.*/node_modules/
+[strict]
