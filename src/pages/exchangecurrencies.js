@@ -34,7 +34,7 @@ type Props = {
 const SiteExchange = (props: Props) => {
   const [selectValue, setSelect] = useState("");
   const [activeInput, setActiveInput] = useState(0);
-  const [changeAmount, setChangeAmount] = useState(1);
+  const [changeAmount, setChangeAmount] = useState(10);
   const {
     RequestCurrenciesList,
     RequestAddCurrenciesList,
