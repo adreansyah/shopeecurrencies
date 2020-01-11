@@ -26,7 +26,6 @@
     "css-loader": "3.2.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
-    "eslint": "^6.6.0",
     "eslint-config-react-app": "^5.1.0",
     "eslint-loader": "3.0.2",
     "eslint-plugin-import": "2.18.2",
@@ -34,6 +33,7 @@
     "eslint-plugin-react": "7.16.0",
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "4.3.0",
+    "flow-bin": "^0.115.0",
     "fs-extra": "^8.1.0",
     "html-webpack-plugin": "4.0.0-beta.5",
     "identity-obj-proxy": "3.0.0",
@@ -77,9 +77,10 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
     "eslint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check"
   },
   "eslintConfig": {
@@ -154,9 +155,9 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-flowtype": "^3.13.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "flow-bin": "^0.67.1"
+    "eslint-plugin-prettier": "^3.1.2"
   }
 }

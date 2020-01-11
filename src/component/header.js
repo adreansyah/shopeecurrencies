@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { TextField } from '@material-ui/core';
 
 const Header = props => {
@@ -23,9 +22,6 @@ const Header = props => {
 					type="number"
 					InputProps={{ inputProps: { min: 0, max: 10000000 } }}
 				/>
-				{/* <Link>
-					<h3>10.0000</h3>
-				</Link> */}
 			</div>
 		</div>
 	);
