@@ -43,9 +43,13 @@ const SiteExchange = (props: Props) => {
 	};
 
 	const AddCurrencies = (e: null) => {
-		RequestAddCurrenciesList(e.target.value);
 		setSelect(e.target.value);
-		setActiveInput(0);
+	};
+
+	const SubmitCurrencies = e => {
+		e.preventDefault();
+		selectValue !== '' && setActiveInput(0);
+		selectValue !== '' && RequestAddCurrenciesList(selectValue);
 	};
 
 	const DeleteCurrencies = (item: null) => {
@@ -68,41 +72,65 @@ const SiteExchange = (props: Props) => {
 					<CardContent>
 						<Header ChangeCurrency={e => ChangeCurrency(e)} changeAmount={changeAmount} />
 						{activeInput !== 0 ? (
-							<FormControl variant="outlined" style={{ minWidth: '100%', marginBottom: 12 }}>
-								<InputLabel id="demo-simple-select-outlined-label">Currencies</InputLabel>
-								<Select
-									labelId="demo-simple-select-outlined-label"
-									id="demo-simple-select-outlined"
-									value={selectValue}
-									onChange={AddCurrencies}
-								>
-									{flowCurrencies.selectedData.map((currencyItem, index) => {
-										return (
-											<MenuItem key={index} value={currencyItem}>
-												{currencyItem.value}
-											</MenuItem>
-										);
-									})}
-								</Select>
-							</FormControl>
+							<>
+								<form onSubmit={SubmitCurrencies}>
+									<FormControl
+										size="small"
+										variant="outlined"
+										style={{ minWidth: '75%', marginBottom: 12 }}
+									>
+										<InputLabel id="demo-simple-select-outlined-label">Currencies</InputLabel>
+										<Select
+											labelId="demo-simple-select-outlined-label"
+											id="demo-simple-select-outlined"
+											value={selectValue}
+											onChange={AddCurrencies}
+										>
+											{flowCurrencies.selectedData.map((currencyItem, index) => {
+												return (
+													<MenuItem key={index} value={currencyItem}>
+														{currencyItem.value} - {currencyItem.exchangeRegion}
+													</MenuItem>
+												);
+											})}
+										</Select>
+									</FormControl>
+									<Button
+										type="submit"
+										size="medium"
+										variant="contained"
+										color="secondary"
+										style={{ margin: 2 }}
+									>
+										Submit
+									</Button>
+								</form>
+							</>
 						) : (
-							<Button onClick={FormInputActiveCurrencies} fullWidth variant="contained" color="secondary">
+							<Button
+								size="medium"
+								onClick={FormInputActiveCurrencies}
+								fullWidth
+								variant="contained"
+								color="secondary"
+							>
 								<FontAwesomeIcon icon={faPlus} fixedWidth /> Add More Currencies
 							</Button>
 						)}
-						{
-              flowCurrencies.data.length !== 0 ? flowCurrencies.data.map((value, index) => {
-							return (
-								<ListCurrencies
-									key={index}
-									data={value}
-                  DeleteCurrencies={() => DeleteCurrencies(value.keys)}
-                  changeAmount={changeAmount}
-								/>
-							);
-            })
-            :<div className="txt-center el-not-found">Exchange Currencies Not found</div>
-          }
+						{flowCurrencies.data.length !== 0 ? (
+							flowCurrencies.data.map((value, index) => {
+								return (
+									<ListCurrencies
+										key={index}
+										data={value}
+										DeleteCurrencies={() => DeleteCurrencies(value.keys)}
+										changeAmount={changeAmount}
+									/>
+								);
+							})
+						) : (
+							<div className="txt-center el-not-found">Exchange Currencies Not found</div>
+						)}
 					</CardContent>
 				</Card>
 			</Container>
