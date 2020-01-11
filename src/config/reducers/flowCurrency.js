@@ -16,9 +16,10 @@ const flowCurrencies = (state = initialState, action) => {
         money: isSetNumber(action.payload.rates[currency]),
         exchangeRegion: currencysRegions[currency]
       }));
+      console.log(responseCurrency);
       return {
         ...state,
-        data: [responseCurrency[10]],
+        data: [responseCurrency[10],responseCurrency[17],responseCurrency[12],responseCurrency[28]],
         selectedData: responseCurrency
       };
     case "REQUEST_ADD_NEW_CURRENCY":
