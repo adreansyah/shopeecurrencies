@@ -79,14 +79,12 @@ const SiteExchange = (props: Props) => {
             {flowCurrencies.data.length !== 0 ? (
               flowCurrencies.data.map((value, index) => {
                 return (
-                  <li key={index}>
-                    <ListCurrencies
-                      
-                      data={value}
-                      DeleteCurrencies={() => DeleteCurrencies(value.keys)}
-                      changeAmount={changeAmount}
-                    />
-                  </li>
+                  <ListCurrencies
+                    key={index}
+                    data={value}
+                    DeleteCurrencies={() => DeleteCurrencies(value.keys)}
+                    changeAmount={changeAmount}
+                  />
                 );
               })
             ) : (
