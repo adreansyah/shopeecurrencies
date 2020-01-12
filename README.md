@@ -1,5 +1,9 @@
 # React Assesment Exchange Currencies !
 
+## crrencies Demo
+![Alt text](/src/images/isimg.gif)
+
+
 This change currencies project creates by requirement the following :
 
     - A text input specifying the currency input amount of base currency, USD.
