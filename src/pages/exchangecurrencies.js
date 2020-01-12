@@ -79,16 +79,18 @@ const SiteExchange = (props: Props) => {
             {flowCurrencies.data.length !== 0 ? (
               flowCurrencies.data.map((value, index) => {
                 return (
-                  <ListCurrencies
-                    key={index}
-                    data={value}
-                    DeleteCurrencies={() => DeleteCurrencies(value.keys)}
-                    changeAmount={changeAmount}
-                  />
+                  <li key={index}>
+                    <ListCurrencies
+                      
+                      data={value}
+                      DeleteCurrencies={() => DeleteCurrencies(value.keys)}
+                      changeAmount={changeAmount}
+                    />
+                  </li>
                 );
               })
             ) : (
-              <div className="txt-center el-not-found">
+              <div data-test="not-found" className="txt-center el-not-found">
                 Exchange Currencies Not found
               </div>
             )}
@@ -127,9 +129,9 @@ const SiteExchange = (props: Props) => {
                     variant="contained"
                     color="secondary"
                     style={{
-                      margin: 2 ,
+                      margin: 2,
                       backgroundColor: "#f35c31",
-                      color:"#FFF"
+                      color: "#FFF"
                     }}
                   >
                     Submit
@@ -145,7 +147,7 @@ const SiteExchange = (props: Props) => {
                 style={{
                   borderRadius: 35,
                   backgroundColor: "#f35c31",
-                  color:"#FFF"
+                  color: "#FFF"
                 }}
               >
                 <FontAwesomeIcon icon={faPlus} fixedWidth /> Add More Currencies

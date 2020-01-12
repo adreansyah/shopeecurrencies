@@ -11,7 +11,7 @@ type Data = {
   exchangeRegion: string
 };
 const ListCurrencies = (props: Data) => {
-  const setData = props.data;
+  // const props.data = props.data;
   return (
     <>
       <div className="el-currencies">
@@ -19,25 +19,25 @@ const ListCurrencies = (props: Data) => {
           <div className="el-size-left">
             <div className="el-flex">
               <div className="el-fair-size-left">
-                <span className="el-number-dictionary">{setData.keys}</span>
+                <span className="el-number-dictionary">{props.data.keys}</span>
               </div>
               <span className="el-number-dictionary txt-right">
                 {props.changeAmount <= 1
-                  ? isSetThousand(setData.money)
-                  : isSetThousand(setData.money * props.changeAmount)}
+                  ? isSetThousand(props.data.money)
+                  : isSetThousand(props.data.money * props.changeAmount)}
               </span>
             </div>
             <div className="el-fair-size-left">
               <span>
-                {setData.keys} - {setData.exchangeRegion}
+                {props.data.keys} - {props.data.exchangeRegion}
               </span>
             </div>
             <div className="el-fair-size-left">
               <span>
-                1 USD = {setData.keys}{" "}
+                1 USD = {props.data.keys}{" "}
                 {props.changeAmount <= 1
-                  ? isSetThousand(setData.money)
-                  : isSetThousand(setData.money * props.changeAmount)}
+                  ? isSetThousand(props.data.money)
+                  : isSetThousand(props.data.money * props.changeAmount)}
               </span>
             </div>
           </div>

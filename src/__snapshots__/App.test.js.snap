@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get Initial States is correct 1`] = `
+Object {
+  "data": Array [],
+  "selectedData": Array [],
+}
+`;
